@@ -1,2 +1,5 @@
 # Municipality-of-Pangil-Laguna
-An interactive WebGIS map of the Municipality of Pangil, Laguna, showcasing key geographic, agricultural, land-use, &amp; environmental features. It enables users to explore spatial data, identify locations, and visualize important information supporting local planning, agricultural development, resource management, and informed decision-making.
+
+WebGIS Interactive Map – Municipality of Pangil, Laguna
+
+An interactive WebGIS map presenting the Municipality of Pangil, Laguna, featuring key geographic, agricultural, land-use, road, and environmental information. Users can explore mapped features, identify locations, and view spatial information through interactive layers and map controls. The WebGIS supports local planning, agricultural development, infrastructure management, and spatial decision-making by providing an accessible visual representation of Pangil’s geographic and resource characteristics.
