@@ -12,28 +12,167 @@
         <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
         <style>
-        html, body {
-            background-color: #ffffff;
-        }
-        .ol-control > * {
-            background-color: #f8f8f8!important;
-            color: #444444!important;
-            border-radius: 0px;
-        }
-        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
-            color: #444444!important;
-        }
-        .search-layer-input-search {
-            background-color: #f8f8f8!important;
-        }
-        .ol-control > *:focus, .ol-control >*:hover {
-            background-color: rgba(248, 248, 248, 0.7)!important;
-        } 
-        .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 2px !important;
-        } 
-        </style>
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   WEBGIS HEADER
+   ========================================= */
+
+.webgis-header {
+    width: 100%;
+    height: 80px;
+
+    background-color: #838b7e1d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+    box-sizing: border-box;
+
+    position: relative;
+    z-index: 1000;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+/* =========================================
+   HEADER BRAND / LOGO
+   ========================================= */
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* PANGIL LOGO */
+
+.pangil-logo {
+    height: 62px;
+    width: auto;
+
+    object-fit: contain;
+
+    margin-right: 16px;
+
+    display: block;
+}
+
+
+/* TITLE */
+
+
+/* LEFT SIDE */
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-title {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #285c3a;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.3px;
+}
+
+.sub-title {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    color: #666666;
+
+    margin-top: 5px;
+
+    line-height: 1.2;
+}
+
+
+/* RIGHT SIDE */
+
+.header-right {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    color: #666666;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MAP
+   ========================================= */
+
+#map {
+    width: 100%;
+
+    height: calc(100% - 80px);
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+}
+
+
+/* =========================================
+   OPENLAYERS CONTROLS
+   ========================================= */
+
+.ol-control > * {
+    background-color: #f8f8f8 !important;
+    color: #444444 !important;
+    border-radius: 0px;
+}
+
+.ol-attribution a,
+.gcd-gl-input::placeholder,
+.search-layer-input-search::placeholder {
+    color: #444444 !important;
+}
+
+.search-layer-input-search {
+    background-color: #f8f8f8 !important;
+}
+
+.ol-control > *:focus,
+.ol-control > *:hover {
+    background-color: rgba(248, 248, 248, 0.7) !important;
+}
+
+.ol-control {
+    background-color: rgba(255,255,255,.4) !important;
+    padding: 2px !important;
+}
+
+</style>
 
         <style>
         html, body, #map {
@@ -46,12 +185,52 @@
         <title></title>
     </head>
     <body>
-        <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
+
+    <!-- ================================
+         WEBGIS HEADER
+         ================================ -->
+    <header class="webgis-header">
+
+    <!-- LOGO + TITLE -->
+    <div class="header-brand">
+
+        <img
+            src="logo/pangil-logo.png"
+            class="pangil-logo"
+            alt="Municipality of Pangil Logo"
+        >
+
+        <div class="header-left">
+
+            <div class="main-title">
+                MUNICIPALITY OF PANGIL, LAGUNA
             </div>
+
+            <div class="sub-title">
+                Agricultural, Land Cover &amp; Hazard WebGIS
+            </div>
+
         </div>
+
+    </div>
+
+
+    <!-- OFFICE -->
+    <div class="header-right">
+        Municipal Agriculture Office
+    </div>
+
+</header>
+
+    <!-- ================================
+         MAP
+         ================================ -->
+    <div id="map"> 
+        <div id="popup" class="ol-popup"> 
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a> 
+            <div id="popup-content"></div> 
+        </div> 
+    </div>
         <script src="resources/qgis2web_expressions.js"></script>
 <script src="resources/proj4.js"></script>
         <script>proj4.defs('ESRI:102454','+proj=utm +zone=51 +ellps=clrk66 +units=m +no_defs');</script>
